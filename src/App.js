@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import DashLayout from "./components/DashLayout";
+import Welcome from "./features/auth/Welcome";
+import ApprovedList from "./features/approved/ApprovedList";
+import OutgoingList from "./features/outgoing/OutgoingList";
+import RealizationList from "./features/realization/RealizationList";
+import NewApproved from "./features/approved/NewApproved";
+import UsersList from "./features/users/UsersList";
+import NewUser from "./features/users/NewUser";
+import DepartmentsList from "./features/departments/DepartmentsList";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="dash" element={<DashLayout />}>
+          <Route index element={<Welcome />} />
+
+          <Route path="approved">
+            <Route index element={<ApprovedList />} />
+            <Route path="new" element={<NewApproved />} />
+          </Route>
+          <Route path="outgoings">
+            <Route index element={<OutgoingList />} />
+          </Route>
+          <Route path="realizations">
+            <Route index element={<RealizationList />} />
+          </Route>
+
+          <Route path="users">
+            <Route index element={<UsersList />} />
+            <Route path="new" element={<NewUser />} />
+          </Route>
+
+          <Route path="departments">
+            <Route index element={<DepartmentsList />} />
+          </Route>
+        </Route>
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
