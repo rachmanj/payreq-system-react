@@ -9,6 +9,8 @@ import NewApproved from "./features/approved/NewApproved";
 import UsersList from "./features/users/UsersList";
 import NewUser from "./features/users/NewUser";
 import DepartmentsList from "./features/departments/DepartmentsList";
+import NewDepartmentForm from "./features/departments/NewDepartmentForm";
+import EditDepartment from "./features/departments/EditDepartment";
 
 const App = () => {
   return (
@@ -35,6 +37,8 @@ const App = () => {
 
           <Route path="departments">
             <Route index element={<DepartmentsList />} />
+            <Route path="new" element={<NewDepartmentForm />} />
+            <Route path=":id" element={<EditDepartment />} />
           </Route>
         </Route>
       </Route>

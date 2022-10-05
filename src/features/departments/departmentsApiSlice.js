@@ -11,7 +11,7 @@ const departmentsApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     getDepartments: builder.query({
       query: () => "/departments",
-      validateStatus: (response, status) => {
+      validateStatus: (response, result) => {
         return response.status === 200 && !result.isError;
       },
       transformResponse: (responseData) => {
@@ -35,7 +35,7 @@ const departmentsApiSlice = apiSlice.injectEndpoints({
         url: "/departments",
         method: "POST",
         body: {
-          ...initialState,
+          ...initialDepartment,
         },
       }),
       invalidatesTags: [{ type: "Department", id: "LIST" }],
