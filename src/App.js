@@ -11,6 +11,9 @@ import NewUser from "./features/users/NewUser";
 import DepartmentsList from "./features/departments/DepartmentsList";
 import NewDepartmentForm from "./features/departments/NewDepartmentForm";
 import EditDepartment from "./features/departments/EditDepartment";
+import ProjectsList from "./features/projects/ProjectsList";
+import NewProjectForm from "./features/projects/NewProjectForm";
+import EditProject from "./features/projects/EditProject";
 
 const App = () => {
   return (
@@ -39,6 +42,12 @@ const App = () => {
             <Route index element={<DepartmentsList />} />
             <Route path="new" element={<NewDepartmentForm />} />
             <Route path=":id" element={<EditDepartment />} />
+          </Route>
+
+          <Route path="projects">
+            <Route index element={<ProjectsList />} />
+            <Route path="new" element={<NewProjectForm />} />
+            <Route path=":id" element={<EditProject />} />
           </Route>
         </Route>
       </Route>

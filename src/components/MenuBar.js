@@ -33,6 +33,9 @@ const MenuBar = () => {
               <LinkContainer to="/dash/departments">
                 <NavDropdown.Item>Departments</NavDropdown.Item>
               </LinkContainer>
+              <LinkContainer to="/dash/projects">
+                <NavDropdown.Item>Projects</NavDropdown.Item>
+              </LinkContainer>
             </NavDropdown>
           </Nav>
         </Container>

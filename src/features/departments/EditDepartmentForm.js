@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   useUpdateDepartmentMutation,
@@ -8,7 +8,6 @@ import {
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { useEffect } from "react";
 
 const EditDepartmentForm = ({ department }) => {
   const [updateDepartment, { isLoading, isSuccess, isError, error }] =
