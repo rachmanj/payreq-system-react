@@ -8,6 +8,7 @@ import RealizationList from "./features/realization/RealizationList";
 import NewApproved from "./features/approved/NewApproved";
 import UsersList from "./features/users/UsersList";
 import NewUser from "./features/users/NewUser";
+import EditUser from "./features/users/EditUser";
 import DepartmentsList from "./features/departments/DepartmentsList";
 import NewDepartmentForm from "./features/departments/NewDepartmentForm";
 import EditDepartment from "./features/departments/EditDepartment";
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="users">
             <Route index element={<UsersList />} />
             <Route path="new" element={<NewUser />} />
+            <Route path=":id" element={<EditUser />} />
           </Route>
 
           <Route path="departments">

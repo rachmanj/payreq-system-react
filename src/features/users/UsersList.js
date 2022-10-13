@@ -60,6 +60,7 @@ const UsersList = () => {
                   <th>Project</th>
                   <th>Roles</th>
                   <th>isActive</th>
+                  <th>action</th>
                 </tr>
               </thead>
               <tbody>{tableContent}</tbody>
